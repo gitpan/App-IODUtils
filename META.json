@@ -30,7 +30,8 @@
       "runtime" : {
          "requires" : {
             "Config::IOD::Reader" : "0",
-            "Perinci::CmdLine" : "1.23",
+            "Perinci::CmdLine::Any" : "0",
+            "Perinci::CmdLine::Lite" : "0.23",
             "Rinci" : "v1.1.52",
             "perl" : "5.010001"
          }
@@ -56,7 +57,7 @@
          "web" : "https://github.com/perlancar/perl-App-IODUtils"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"

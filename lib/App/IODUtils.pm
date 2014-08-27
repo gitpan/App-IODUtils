@@ -1,6 +1,6 @@
 package App::IODUtils;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 our $DATE = '2014-08-27'; # DATE
 
 use 5.010001;
@@ -19,7 +19,7 @@ App::IODUtils - IOD utilities
 
 =head1 VERSION
 
-This document describes version 0.01 of App::IODUtils (from Perl distribution App-IODUtils), released on 2014-08-27.
+This document describes version 0.02 of App::IODUtils (from Perl distribution App-IODUtils), released on 2014-08-27.
 
 =head1 SYNOPSIS
 

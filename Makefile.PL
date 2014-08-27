@@ -26,7 +26,8 @@ my %WriteMakefileArgs = (
   "NAME" => "App::IODUtils",
   "PREREQ_PM" => {
     "Config::IOD::Reader" => 0,
-    "Perinci::CmdLine" => "1.23",
+    "Perinci::CmdLine::Any" => 0,
+    "Perinci::CmdLine::Lite" => "0.23",
     "Rinci" => "v1.1.52"
   },
   "TEST_REQUIRES" => {
@@ -35,7 +36,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -47,7 +48,8 @@ my %FallbackPrereqs = (
   "File::Spec" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Perinci::CmdLine" => "1.23",
+  "Perinci::CmdLine::Any" => 0,
+  "Perinci::CmdLine::Lite" => "0.23",
   "Rinci" => "v1.1.52",
   "Test::More" => 0
 );

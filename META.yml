@@ -18,14 +18,15 @@ meta-spec:
 name: App-IODUtils
 requires:
   Config::IOD::Reader: '0'
-  Perinci::CmdLine: '1.23'
+  Perinci::CmdLine::Any: '0'
+  Perinci::CmdLine::Lite: '0.23'
   Rinci: v1.1.52
   perl: '5.010001'
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-IODUtils
   homepage: https://metacpan.org/release/App-IODUtils
   repository: git://github.com/perlancar/perl-App-IODUtils.git
-version: '0.01'
+version: '0.02'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
