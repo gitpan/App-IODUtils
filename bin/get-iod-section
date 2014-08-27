@@ -1,0 +1,101 @@
+#!perl
+
+our $DATE = '2014-08-27'; # DATE
+our $VERSION = '0.01'; # VERSION
+
+use 5.010;
+use strict;
+use warnings;
+
+use Perinci::CmdLine 1.23;
+
+our %SPEC;
+$SPEC{get_iod_section} = {
+    v => 1.1,
+    summary => 'Get whole section of IOD configuration file',
+    args => {
+        iod => {
+            summary => 'IOD file',
+            schema  => ['str*'],
+            req     => 1,
+            pos     => 0,
+            cmdline_src => 'stdin_or_files',
+        },
+        section => {
+            schema  => 'str*',
+            req     => 1,
+            pos     => 1,
+        },
+    },
+};
+sub get_iod_section {
+    my %args = @_;
+
+    state $reader = do {
+        require Config::IOD::Reader;
+        Config::IOD::Reader->new;
+    };
+
+    my $hoh = $reader->read_string($args{iod});
+
+    my $section = $args{section};
+
+    return [404, "No such section"] unless exists $hoh->{$section};
+    [200, "OK", $hoh->{$section}];
+}
+
+Perinci::CmdLine->new(
+    url => '/main/get_iod_section',
+)->run;
+
+# ABSTRACT: Get whole section of IOD configuration file
+# PODNAME: get-iod-section
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+get-iod-section - Get whole section of IOD configuration file
+
+=head1 VERSION
+
+This document describes version 0.01 of get-iod-section (from Perl distribution App-IODUtils), released on 2014-08-27.
+
+=head1 SYNOPSIS
+
+Basic usage:
+
+ % get-iod-section /path/to/file.iod section
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/App-IODUtils>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/perlancar/perl-App-IODUtils>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=App-IODUtils>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+perlancar <perlancar@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by perlancar@cpan.org.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
