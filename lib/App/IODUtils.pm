@@ -1,9 +1,25 @@
 package App::IODUtils;
 
-our $VERSION = '0.02'; # VERSION
-our $DATE = '2014-08-27'; # DATE
+our $VERSION = '0.03'; # VERSION
+our $DATE = '2014-08-30'; # DATE
 
 use 5.010001;
+
+our %common_args = (
+    iod => {
+        summary => 'IOD file',
+        schema  => ['str*'],
+        req     => 1,
+        pos     => 0,
+        cmdline_src => 'stdin_or_files',
+    },
+    enable_expr => {
+        schema  => 'bool',
+        default => 0,
+        cmdline_aliases => {e=>{}},
+    },
+);
+
 1;
 # ABSTRACT: IOD utilities
 
@@ -19,7 +35,7 @@ App::IODUtils - IOD utilities
 
 =head1 VERSION
 
-This document describes version 0.02 of App::IODUtils (from Perl distribution App-IODUtils), released on 2014-08-27.
+This document describes version 0.03 of App::IODUtils (from Perl distribution App-IODUtils), released on 2014-08-30.
 
 =head1 SYNOPSIS
 

@@ -2,8 +2,8 @@ NAME
     App::IODUtils - IOD utilities
 
 VERSION
-    This document describes version 0.02 of App::IODUtils (from Perl
-    distribution App-IODUtils), released on 2014-08-27.
+    This document describes version 0.03 of App::IODUtils (from Perl
+    distribution App-IODUtils), released on 2014-08-30.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
